@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_appcenter_bundle/flutter_appcenter_bundle.dart';
+void main()async {
 
-void main() {
+
+  await AppCenter.startAsync(
+    appSecretAndroid: '******',
+    appSecretIOS: '******',
+    enableAnalytics: true, // Defaults to true
+    enableCrashes: true, // Defaults to true
+    enableDistribute: true, // Defaults to false
+    usePrivateDistributeTrack: false, // Defaults to false
+    disableAutomaticCheckForUpdate: false, // Defaults to false
+  );
+
+  AppCenter.trackEventAsync('my event', <String, String> {
+    'prop1': 'prop1',
+    'prop2': 'prop2',
+  });
+
   runApp(MyApp());
 }
 
