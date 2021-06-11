@@ -33,7 +33,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.company.example"
+        applicationId "com.example.app_centera_demo"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 12345
@@ -57,4 +57,9 @@ android {
 
 flutter {
     source '../..'
+}
+dependencies {
+    def appCenterSdkVersion = '4.1.0'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
 }
